@@ -30,7 +30,6 @@ telefone = int(input("Digite o seu telefone: "))
 
 # Distância diária e mensal
 distancia_diaria = 64
-distancia_diaria = 
 distancia_mensal = 1280 
 
 # preço combustível
