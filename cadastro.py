@@ -7,12 +7,14 @@ while True:
     print('2. Listar usuário.')
     print('3. Excluir usuario.')
     print('4. Buscar pelo nome.')
-    print('5. Sair')
+    print('5. Inserir em uma posição.')
+    print('6. Sair')
     print(66*'*')
     print()
     opcao = input('Digite a opção desejada: ')
     
-    #Cadastrar usuário
+    #Cadastrar 
+    
     if opcao == '1':
         nome = input('Digite o nome que deseja cadastrar: ').upper()
         
@@ -22,12 +24,14 @@ while True:
         else:
             print('Digite algum valor: ')
             
-    #Listar usuário     
+    #Listar usuário    
+     
     elif opcao == '2':
         for i, n in enumerate(lista_usuario):
             print(f'{i + 1}° {n}')
 
     #Excluir usuário
+    
     elif opcao == '3':
         
         for i, n in enumerate(lista_usuario):
@@ -48,14 +52,29 @@ while True:
                 print('Usuario removido com sucesso')
         '''
     #Buscar pelo nome
+    
     elif opcao == '4':
         nome_buscar = input('Digite o nome que deseje buscar na lista: ').upper
         for i in lista_usuario:
             if i == nome_buscar:
                 print (i)
                 
-    #Saida do sistema    
+    #Inserir em uma posição
+    
     elif opcao == '5':
+        novo_nome = input('Digite o nome que deseja inserir: ').upper()
+        posicao_nome = int(input('Digite a posição que deseja inserir: '))
+        
+        #Correção da posição
+        posicao_nome -=1
+        if posicao_nome >= 0 and posicao_nome <= len (lista_usuario):
+             lista_usuario.insert(posicao_nome, novo_nome)
+        else:
+            print('Posição invalida!')
+                
+    #Saida do sistema
+    
+    elif opcao == '6':
         print('Saindo do Sistema!')
         break
     else:
